@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   root to: "splash#index"
 
   get "/splash", to: "splash#index"
+  get "/login", to: "sessions#new"
+  get "/users", to: "users#index", as: "users"
+  get "/users/:id", to: "users#show", as: "user"
+  get "/users/new", to: "users#new", as: "new_user"
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
