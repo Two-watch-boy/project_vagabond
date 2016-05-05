@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get "/users/new", to: "users#new", as: "new_user"
   post "/users", to: "users#create"
   get "/users/:id", to: "users#show", as: "user"
+  get "/logout", to: "sessions#destroy" 
+  post "/sessions", to: "sessions#create"
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
