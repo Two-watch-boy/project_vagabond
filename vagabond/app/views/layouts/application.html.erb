@@ -59,8 +59,11 @@
   </div>
 </nav>
   <h1></h1>
-
-
+<% flash.each do |name, msg| %>
+  <p>
+    <small> <%= name.capitalize %> : <%= msg %> </small>
+  </p>
+<% end %>
 <%= yield %>
 
 </body>
