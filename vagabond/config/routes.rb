@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: "splash#index"
 
   get "/splash", to: "splash#index"
+
+  get "/users/:user_id/posts/:post_id", to: "user_posts#show", as: "user_post"
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
