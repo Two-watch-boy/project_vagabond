@@ -2,7 +2,9 @@
   <div class="col-sm-9 col-sm-push-3">
     <h1> <%=@post.title %> </h1>
     <p> <%=@post.content %> </p>
+      <%= link_to "Delete", delete_user_posts_path(@post.user, @post), method: :delete %>
   </div>
+
 
   <div class="col-sm-3 col-sm-pull-9">
     <img src="<%=@post.user.photo %>", class="img-responsive" />

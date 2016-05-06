@@ -9,7 +9,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
+    print @user.photo
+    if @user.photo == ""
+      print "in if statement"
+      @user.photo = "https://www.keypascoru.com/files/User_ring.png"
+    end
+    print @user.photo
+    @user.save
     login(@user)
     redirect_to @user
   end
