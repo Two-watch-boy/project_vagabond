@@ -19,7 +19,8 @@ user_data = []
     last_name: last,
     email: "#{first[0]}_#{last}@example.com".downcase,
     photo: "https://www.keypascoru.com/files/User_ring.png",
-    location: "San Francisco, CA"
+    location: "San Francisco, CA",
+    password: "a"
   }
 end
 

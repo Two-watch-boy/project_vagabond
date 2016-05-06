@@ -15,7 +15,7 @@
   <%end%>
   <% @user.posts.each do |post| %>
   <div class="posts">
-    <%= link_to post.title, user_post_path(user.first_name, post) %>
+    <%= link_to post.title, user_post_path(@user.first_name, post) %>
 
   </div>
 <%end%>
