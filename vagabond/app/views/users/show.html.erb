@@ -1,16 +1,18 @@
 <div class="profile">
 
-  <% if @user_id == current_user%>
+  <% if @user == current_user%>
+    <div>
+      <h1 class="welcome">Welcome,</h1>
+      <%= image_tag (@user.photo), class: "profilePic"%>
+      <p class="name"><%= @user.first_name%> <%= @user.last_name%></br><small><%= @user.location%></small></p><%= link_to "Edit", edit_path(@user)%>
+
+    </div>
+  <%else%>
     <div>
       <%= image_tag (@user.photo), class: "profilePic"%>
       <p class="name"><%= @user.first_name%> <%= @user.last_name%></p>
       </br><%= @user.location%>
-    </div>
-  <%else%>
-    <div>
-      <h1 class="welcome">Welcome,</h1>
-      <%= image_tag (@user.photo), class: "profilePic"%>
-      <p class="name"><%= @user.first_name%> <%= @user.last_name%></br><small><%= @user.location%></small></p>
+
     </div>
   <%end%>
   <% @user.posts.each do |post| %>
