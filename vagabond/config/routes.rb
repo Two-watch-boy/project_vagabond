@@ -21,8 +21,7 @@ Rails.application.routes.draw do
   post "/posts", to: "posts#create"
   patch "/posts/:post_id", to: "posts#update", as: "update_post"
   get "/posts/:post_id/edit", to: "posts#edit", as: "edit_user_post"
-  delete "/posts/:post_id", to: "posts#destroy"
-
+  delete "/posts/:user_id/posts/:posts_id", to: "user_posts#destroy", as: "delete_user_posts"
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
