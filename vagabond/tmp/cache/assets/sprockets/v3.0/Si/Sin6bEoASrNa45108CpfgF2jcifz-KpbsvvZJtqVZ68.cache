@@ -1,3 +1,8 @@
 [o:Set:
+<<<<<<< HEAD
 @hash}
 I"environment-version:ETTI"environment-paths;TTI"rails-env;TTI"jprocessors:type=application/javascript&file_type=application/javascript&engines=.coffee&pipeline=self;TTI"6file-digest://app/assets/javascripts/posts.coffee;TTF
+=======
+@hash{
+I"environment-version:ETTI"environment-paths;TTI"rails-env;TTI"jprocessors:type=application/javascript&file_type=application/javascript&engines=.coffee&pipeline=self;TTI"6file-digest://app/assets/javascripts/posts.coffee;TT
+>>>>>>> 9841f28e5d507dd4175ccd17324c300d641e5090

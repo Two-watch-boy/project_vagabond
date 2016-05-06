@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506005215) do
+ActiveRecord::Schema.define(version: 20160506190532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "photo"
+    t.decimal  "lat"
+    t.decimal  "lon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -23,19 +32,11 @@ ActiveRecord::Schema.define(version: 20160506005215) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.integer  "city_id"
   end
 
+  add_index "posts", ["city_id"], name: "index_posts_on_city_id", using: :btree
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
-
-  create_table "user_posts", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "user_posts", ["post_id"], name: "index_user_posts_on_post_id", using: :btree
-  add_index "user_posts", ["user_id"], name: "index_user_posts_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
@@ -46,9 +47,9 @@ ActiveRecord::Schema.define(version: 20160506005215) do
     t.string   "location"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "username"
   end
 
+  add_foreign_key "posts", "cities"
   add_foreign_key "posts", "users"
-  add_foreign_key "user_posts", "posts"
-  add_foreign_key "user_posts", "users"
 end

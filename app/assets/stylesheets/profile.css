@@ -25,3 +25,9 @@ small{
 .user{
   padding-bottom: 15px;
 }
+.alert{
+  width: 400px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 10px;
+}
