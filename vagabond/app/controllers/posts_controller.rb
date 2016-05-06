@@ -15,6 +15,27 @@ class PostsController < ApplicationController
     end
   end
 
+  def update
+    @post = Post.find(params[:post_id])
+    if @post.update(posts_params)
+      flash[:success] = "Your post was successfully changed."
+      redirect_to user_path(@post.user)
+    else
+      flash[:error] = "There was an error in your changes."
+      redirect_to edit_user_post(@post)
+    end
+  end
+
+  def edit
+    @post = Post.find(params[:post_id])
+  end
+
+  def destroy
+    @post = Post.find(params[:post_id])
+    @post.destroy
+    redirect_to root_path
+  end
+
   private
   def post_params
     params.require(:post).permit(:title,:content,:photo)

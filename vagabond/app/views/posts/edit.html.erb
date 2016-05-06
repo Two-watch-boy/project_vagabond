@@ -1,0 +1,22 @@
+<% if @post.errors.any? %>
+<ul>
+  <% @post.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<div class="container">
+  <%= form_for @post, url: update_post_path(@post) do |f| %>
+  <div>
+    <%= f.text_field :title, {placeholder: "Title", class: "form-control"} %>
+  </div>
+  <div>
+    <%= f.text_area :content, {placeholder: "Thoughts", class: "form-control"} %>
+  </div>
+  <div>
+    <%= f.text_field :photo, {placeholder: "Image URL", class: "form-control"} %>
+  </div>
+  <%= f.submit class: "btn btn-success btn-block"%>
+  <% end %>
+</div>
