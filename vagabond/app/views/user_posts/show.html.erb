@@ -1,6 +1,13 @@
-<h1> <%=@post.title %> </h1>
-<p> <%=@post.content %> </p>
-<p> <%=@post.user.first_name %> </p>
-<p> <%=@post.user.created_at %> </p>
-<p> <%=@post.user.location %> </p>
-<img src="<%=@post.user.photo %>" />
+<div class="row">
+  <div class="col-sm-9 col-sm-push-3">
+    <h1> <%=@post.title %> </h1>
+    <p> <%=@post.content %> </p>
+  </div>
+
+  <div class="col-sm-3 col-sm-pull-9">
+    <img src="<%=@post.user.photo %>" />
+    <p> <%= link_to @post.user.first_name, user_path(@post.user) %> </p>
+    <p> <%= "Member for " + ((Time.now.to_i - @post.user.created_at.to_i)/3600000).floor.to_s + " days" %> </p>
+    <p> <%=@post.user.location %> </p>
+  </div>
+</div>
