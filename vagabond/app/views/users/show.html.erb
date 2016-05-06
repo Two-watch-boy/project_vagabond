@@ -2,17 +2,15 @@
 
   <% if @user == current_user%>
     <div>
-      <h1 class="welcome">Welcome,</h1>
+      <h1 class="welcome">Welcome to,</h1>
       <%= image_tag (@user.photo), class: "profilePic"%>
-      <p class="name"><%= @user.first_name%> <%= @user.last_name%></br><small><%= @user.location%></small></p><%= link_to "Edit", edit_path(@user)%>
+      <p class="name"><%= @user.first_name%> <%= @user.last_name%></br><small><%= @user.location%></small></p></br><%= link_to "Edit", edit_path(@user)%>
 
     </div>
   <%else%>
     <div>
       <%= image_tag (@user.photo), class: "profilePic"%>
-      <p class="name"><%= @user.first_name%> <%= @user.last_name%></p>
-      </br><%= @user.location%>
-
+      <p class="name"><%= @user.first_name%> <%= @user.last_name%></br><small><%= @user.location%></small></p>
     </div>
   <%end%>
   <% @user.posts.each do |post| %>

@@ -16,3 +16,12 @@
 .newUserText{
   margin-left: 30%;
 }
+.updateUser{
+  display: block;
+  width: 40%;
+  margin: auto;
+  margin-bottom: 5px;
+}
+.updateUserText{
+  margin-left: 30%;
+}
