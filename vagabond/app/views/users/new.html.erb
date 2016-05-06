@@ -1,17 +1,24 @@
-Sign Up
+<div class="newUserPage">
 
-<%= form_for @user do |f| %>
+  <h1 class="newUserText">Sign Up</h1>
+
+  <%= form_for @user do |f| %>
   <div>
-    <%= f.text_field :first_name, placeholder: "First Name" %>
+    <%= f.text_field :first_name, placeholder: "First Name" , class: "newUser form-control"%>
   </div>
   <div>
-    <%= f.text_field :last_name, placeholder: "Last Name" %>
+    <%= f.text_field :last_name, placeholder: "Last Name" , class: "newUser form-control"%>
   </div>
   <div>
-    <%= f.text_field :email, placeholder: "Email" %>
+    <%= f.text_field :email, placeholder: "Email" , class: "newUser form-control"%>
   </div>
   <div>
-    <%= f.password_field :password, placeholder: "Password" %>
+    <%= f.password_field :password, placeholder: "Password" , class: "newUser form-control"%>
   </div>
-  <%= f.submit "Sign Up" %>
-<% end %>
+  <div>
+    <%= f.text_field :photo, placeholder: "Picture URL" , class: "newUser form-control"%>
+  </div>
+
+  <%= f.submit "Sign Up", class: "newUserText btn btn-primary"%>
+  <% end %>
+</div>

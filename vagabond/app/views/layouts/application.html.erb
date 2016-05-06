@@ -2,10 +2,10 @@
 <html>
 <head>
   <title>Vagabond</title>
+  <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
 </head>
 <body>
   <nav class="navbar navbar-default">
@@ -24,8 +24,7 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <li><%= link_to "Users", users_path%></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -47,6 +46,7 @@
       </form>
       <% if current_user %>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Profile", user_path(current_user)%></li>
         <li><%= link_to "Logout", logout_path%></li>
       </ul>
       <% else%>
@@ -58,13 +58,16 @@
     </div>
   </div>
 </nav>
-  <h1></h1>
 <% flash.each do |name, msg| %>
   <p>
     <small> <%= name.capitalize %> : <%= msg %> </small>
   </p>
 <% end %>
-<%= yield %>
+
+<div class="yield">
+
+  <%= yield %>
+</div>
 
 </body>
 

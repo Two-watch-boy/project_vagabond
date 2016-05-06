@@ -1,0 +1,15 @@
+.fixed {
+  position:fixed;
+  z-index:999;
+  width: 100%;
+}
+.yield{
+  display: block;
+  width: 90%;
+  margin: auto;
+}
+.coverPhoto{
+  display: block;
+  width: 90%;
+  margin: auto;
+}

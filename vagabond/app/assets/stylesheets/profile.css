@@ -1,0 +1,27 @@
+.profile{
+  display: block;
+  width: 60%;
+  margin: auto;
+}
+.welcome{
+font-size: 45px;
+}
+.profilePic{
+  display: inline;
+  width: 150px;
+  margin-right: 20px;
+}
+.name{
+  position: absolute;;
+  display: inline-block;
+  font-size: 30px;
+}
+.location{
+  font-size: 20px;
+}
+small{
+  font-size: 20px;
+}
+.user{
+  padding-bottom: 15px;
+}
