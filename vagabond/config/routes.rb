@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   get "/users/:user_id/posts/:post_id", to: "user_posts#show", as: "user_post"
   get "/posts/new", to: "posts#new", as: "new_post"
   post "/posts", to: "posts#create"
+  put "/posts/:post_id", to: "posts#update", as: "update_post"
+  get "/posts/:post_id/edit", to: "posts#edit", as: "edit_user_post"
+  delete "/posts/:post_id", to: "posts#destroy"
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
