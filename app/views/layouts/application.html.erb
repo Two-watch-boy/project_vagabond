@@ -59,9 +59,10 @@
   </div>
 </nav>
 <% flash.each do |name, msg| %>
-  <p>
-    <small> <%= name.capitalize %> : <%= msg %> </small>
-  </p>
+  <div class="alert alert-dismissible alert-info">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Oh snap!</strong> <%= msg %>
+  </div>
 <% end %>
 
 <div class="yield">
