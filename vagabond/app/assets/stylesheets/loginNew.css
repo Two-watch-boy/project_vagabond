@@ -1,0 +1,18 @@
+.login{
+  display: block;
+  width: 40%;
+  margin: auto;
+  margin-bottom: 5px;
+}
+.loginText{
+  margin-left: 30%;
+}
+.newUser{
+  display: block;
+  width: 40%;
+  margin: auto;
+  margin-bottom: 5px;
+}
+.newUserText{
+  margin-left: 30%;
+}

@@ -1,4 +1,22 @@
-<%= link_to "home", root_url %>
-<div>
-  Welcome, <%= @user.first_name%> <%= @user.last_name%>
+<div class="profile">
+
+  <% if @user_id == current_user%>
+    <div>
+      <%= image_tag (@user.photo), class: "profilePic"%>
+      <p class="name"><%= @user.first_name%> <%= @user.last_name%></p>
+      </br><%= @user.location%>
+    </div>
+  <%else%>
+    <div>
+      <h1 class="welcome">Welcome,</h1>
+      <%= image_tag (@user.photo), class: "profilePic"%>
+      <p class="name"><%= @user.first_name%> <%= @user.last_name%></br><small><%= @user.location%></small></p>
+    </div>
+  <%end%>
+  <% @user.posts.each do |post| %>
+  <div class="posts">
+    <%= link_to post.title, user_post_path(@user.first_name, post) %>
+
+  </div>
+<%end%>
 </div>
