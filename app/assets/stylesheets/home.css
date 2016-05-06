@@ -8,9 +8,12 @@
   width: 90%;
   margin: auto;
 }
-.coverPhoto{
-  display: block;
-  width: 90%;
-  margin: auto;
-  opacity: 0.4;
+#myCarousel{
+  height: 450px;
 }
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: auto;
+      height: 450px;
+      margin: auto;
+  }
