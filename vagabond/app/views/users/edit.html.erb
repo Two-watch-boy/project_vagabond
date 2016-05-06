@@ -1,0 +1,24 @@
+<div class="updateUserPage">
+
+  <% if @user == current_user%>
+  <h1 class="updateUserText">Edit Your Info</h1>
+    <%= form_for @user do |f| %>
+    <div>
+      <%= f.text_field :first_name, placeholder: "First Name" , class: "updateUser form-control" %>
+    </div>
+    <div>
+      <%= f.text_field :last_name, placeholder: "Last Name" , class: "updateUser form-control"%>
+    </div>
+    <div>
+      <%= f.text_field :location, placeholder: "Location" , class: "updateUser form-control"%>
+    </div>
+    <div>
+      <%= f.text_field :photo, placeholder: "Picture URL" , class: "updateUser form-control"%>
+    </div>
+
+    <%= f.submit "Edit", class: "updateUserText btn btn-primary"%>
+    <% end %>
+  <%else%>
+    <h1 class="updateUserText">Access Denied</br><small>you suck :(</small></h1>
+  <%end%>
+</div>
