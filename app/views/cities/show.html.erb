@@ -18,9 +18,9 @@
     </div>
 </div>
 <div class="posts">
-  <% @posts.each do |post|%>
+  <% @posts.each do |post| %>
   <div class="city">
-    <p class="postData"><%=post.title%></br><small><%=post.content%><%= post.created_at%></small></p>
+    <p class="postData"><%= link_to post.title, city_post_path(@city, post) %></br><small><%=post.content%><%= post.created_at%></small></p>
 
   </div>
   <%end%>
