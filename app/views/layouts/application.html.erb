@@ -48,21 +48,25 @@
     </div>
   </div>
 </nav>
-<% flash.each do |name, msg| %>
-  <div class="alert alert-dismissible alert-info">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <strong>Oh snap!</strong> <%= msg %>
+<div class="body2">
+
+  <% flash.each do |name, msg| %>
+    <div class="alert alert-dismissible alert-info">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Oh snap!</strong> <%= msg %>
+    </div>
+  <% end %>
+
+  <div class="yield">
+
+    <%= yield %>
   </div>
-<% end %>
 
-<div class="yield">
+  </body>
 
-  <%= yield %>
+  <!-- scripts -->
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 </div>
-
-</body>
-
-<!-- scripts -->
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </html>

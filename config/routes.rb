@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   patch "/users/:id", to: "users#update"
 
   get "/cities", to: "cities#index", as: "cities"
-  get "/cities/:id", to: "cities#show"
+  get "/cities/:id", to: "cities#show", as: "city"
 
   get "/users/:user_id/posts/:post_id", to: "user_posts#show", as: "user_post"
   get "/posts/new", to: "posts#new", as: "new_post"
