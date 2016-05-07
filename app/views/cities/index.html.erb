@@ -2,7 +2,7 @@
   <% @city.each do |t|%>
   <div class="city">
     <%= image_tag (t.photo), class: "cityPic"%>
-    <p class="name"><%=link_to "#{t.name}", cities_path(t)%></br><small><%= t.lat%><%= t.lon%></small></p>
+    <p class="name"><%=link_to "#{t.name}", city_path(t)%></br><small><%= t.lat%><%= t.lon%></small></p>
 
   </div>
   <%end%>

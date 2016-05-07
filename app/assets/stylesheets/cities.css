@@ -9,3 +9,18 @@
   border: 2px dashed grey;
   border-radius: 20px;
 }
+.cityProfile{
+  position: static;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 500px;
+  margin: auto;
+}
+.body2{
+  /*padding-top: 21px;*/
+}
+.welcome{
+  position: relative;;
+  margin-top: 0px;
+}
