@@ -12,7 +12,7 @@ class CityPostsController < ApplicationController
     @post.save
     if current_user.posts.push(@post)
       flash[:notice] = "#{@post.title} created"
-      redirect_to city_post_path(@city.name.gsub(/" "/, "%20"),@post)
+      redirect_to city_post_path(@city.name.gsub(/" "/, "-"),@post)
     else
       @post.destroy
       flash[:error] = "Something went wrong, please post again."
