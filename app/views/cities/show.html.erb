@@ -8,15 +8,12 @@
   <%=  yield :css %>
 
 </style>
+<div class = "darken"><!-- <%= image_tag (@city.photo), class: "cityProfilePic"%> --></div>
 <div class="cityProfile">
-
-    <div>
-      <h1 class="welcome">Welcome to <%= @city.name%>,</h1>
-      <!-- <%= image_tag (@city.photo), class: "cityProfilePic"%> -->
-      <p class="name"><%= @city.name%></br> lat: <%=@city.lat%></br> lon: <%=@city.lon%>
-
-    </div>
+    <h1 class="welcome">Welcome to <%= @city.name%>,</h1>
+    <p class="name"><%= @city.name%></br> lat: <%=@city.lat%></br> lon: <%=@city.lon%>
 </div>
+
 <div class="posts">
   <% @posts.each do |post| %>
   <div class="city">
