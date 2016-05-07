@@ -19,9 +19,9 @@ Rails.application.routes.draw do
   get "/users/:user_id/posts/:post_id", to: "user_posts#show", as: "user_post"
   get "/cities/:city_name/posts/:post_id", to: "user_posts#show", as: "city_post"
   post "/cities/:city_name/posts", to: "city_posts#create", as: "create_city_post"
-  patch "cities/:city_name/posts/:post_id", to: "posts#update", as: "update_post"
-  get "cities/:city_name/posts/:post_id/edit", to: "posts#edit", as: "edit_user_post"
-  delete "/cities/:city_id/posts/:posts_id", to: "city_posts#destroy", as: "delete_city_posts"
+  patch "cities/:city_name/posts/:post_id", to: "city_posts#update", as: "update_city_post"
+  get "cities/:city_name/posts/:post_id/edit", to: "city_posts#edit", as: "edit_city_post"
+  delete "/cities/:city_id/posts/:post_id", to: "city_posts#destroy", as: "delete_city_post"
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

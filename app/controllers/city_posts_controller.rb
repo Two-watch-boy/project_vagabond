@@ -33,12 +33,13 @@ class CityPostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:post_id])
+    @city = City.find_by(name: parse_city)
   end
 
   def destroy
     @post = Post.find(params[:post_id])
     @post.destroy
-    redirect_to root_path
+    redirect_to root_path #change to city_show path eventually
   end
 
   private
