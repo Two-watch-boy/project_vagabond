@@ -16,6 +16,7 @@
   width: 100%;
   height: 500px;
   margin: auto;
+  margin-bottom: 20px;
 }
 .body2{
   /*padding-top: 21px;*/
@@ -23,8 +24,4 @@
 .welcome{
   position: relative;;
   margin-top: 0px;
-}
-
-.postData {
-  padding-top: 20px;
 }
