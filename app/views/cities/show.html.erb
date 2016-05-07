@@ -20,7 +20,7 @@
 <div class="posts">
   <% @posts.each do |post| %>
   <div class="city">
-    <p class = "postTitle"><%= link_to post.title, city_post_path(@city, post)%></p>
+    <%= link_to post.title, city_post_path(@city, post)%></p>
     <p class = "postData"><small><%=post.content%></small></p>
     <p> <%= "Published " + ((Time.now.to_i - post.created_at.to_i)/3600000).floor.to_s + " days ago" %> </p>
 
