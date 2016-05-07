@@ -10,8 +10,6 @@ $(window).bind('scroll', function () {
         $('.cityProfile').css('margin-top', 30);
 
     }
-});
-
 
 jQuery(function(){
 
@@ -39,4 +37,5 @@ jQuery(function(){
         $(this).parent().hide().prev().show().prev().show();
     });
 
+});
 });
