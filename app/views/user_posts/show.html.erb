@@ -5,7 +5,7 @@
     <h1> <%=@post.title %> </h1>
     <p> <%=@post.content %> </p>
       <%= link_to "Edit", edit_city_post_path(@post.city.name, @post), method: :get %>
-      <%= link_to "Delete", delete_city_post_path(@post.city, @post), method: :delete %>
+      <%= link_to "Delete", delete_city_post_path(@post.city, @post), method: :delete, data: {confirm: "Are you sure?"}  %>
   </div>
 
 
