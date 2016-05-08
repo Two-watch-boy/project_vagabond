@@ -9,8 +9,12 @@ class User < ActiveRecord::Base
     @user.try(:authenticate, params[:password])
   end
 
+  def slug
+    first_name.downcase.gsub(" ", "-")
+  end
+
   def to_param
-    "#{id}-#{first_name}-#{last_name}"
+    "#{id}-#{slug}"
   end
 
 end
