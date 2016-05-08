@@ -11,7 +11,7 @@
 
 
   <div class="col-sm-3 col-sm-pull-9">
-    <img src="<%=@post.user.photo %>", class="img-responsive" />
+    <img src="<%=@post.user.photo %>", class="img-responsive2" />
     <p> <%= link_to @post.user.first_name, user_path(@post.user) %> </p>
     <p> <%= "Member for " + ((Time.now.to_i - @post.user.created_at.to_i)/3600000).floor.to_s + " days" %> </p>
     <p> <%=@post.user.location %> </p>

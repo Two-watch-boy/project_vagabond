@@ -1,0 +1,18 @@
+Add a city
+
+<div class="container">
+  <%= form_for @city do |f| %>
+  <div>
+    <%= f.text_field :name, {placeholder: "City Name", class: "form-control"} %>
+  </div>
+  <div>
+    <%= f.text_field :photo, {placeholder: "Image URL", class: "form-control"} %>
+  </div>
+  <div>
+    <%= f.text_field :lat, {placeholder: "latitude", class: "form-control"} %>
+  </div>
+  <div>
+    <%= f.text_field :lon, {placeholder: "longitude", class: "form-control"} %>
+  </div>
+  <%= f.submit class: "btn btn-success btn-block"%>
+  <% end %>

@@ -14,10 +14,10 @@
   height: 500px;
   margin: auto;
   margin-bottom: 20px;
-  text-shadow: 4px 3px #3a3a3a;
+  text-shadow: 3px 2px #3a3a3a;
 }
 .darken{
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
   position: absolute;
   top: 5;
   left: 5;
@@ -37,7 +37,13 @@
   height: 50px;
   margin: 45px 40px 20px 0;
 }
+
+.img-responsive2{
+display: block;
+max-width: 100%;
+height: auto;
+}
 .userAvatar {
   float: left;
-
+  margin-bottom: 15px;
 }
