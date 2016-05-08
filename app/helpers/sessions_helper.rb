@@ -17,5 +17,12 @@ module SessionsHelper
   def logout
     @current_user = session[:id] = nil
   end
-  
+
+  def verifyUser
+    if current_user != @user
+      flash["error"]="Unauthorized"
+      redirect_to root_path
+    end
+  end
+
 end
