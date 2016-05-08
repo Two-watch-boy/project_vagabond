@@ -17,7 +17,8 @@
 <div class="posts">
   <% @posts.each do |post| %>
   <div class="city">
-    <%= link_to post.title, city_post_path(@city, post)%></p>
+    <img src="<%=post.user.photo %>", class="img-responsive" />
+    <h3><%= link_to post.title, city_post_path(@city, post)%></h3>
     <p class = "postData"><small><%=post.content%></small></p>
     <p> <%= "Published " + ((Time.now.to_i - post.created_at.to_i)/3600000).floor.to_s + " days ago" %> </p>
 

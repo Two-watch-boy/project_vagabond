@@ -1,5 +1,4 @@
 
-
 jQuery(function(){
 
     var minimized_elements = $('p.postData');
