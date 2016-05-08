@@ -1,3 +1,32 @@
+<script>
+jQuery(function(){
+
+    var minimized_elements = $('p.postData');
+
+    minimized_elements.each(function(){
+        var t = $(this).text();
+        if(t.length < 250) return;
+
+        $(this).html(
+            t.slice(0,250)+'<span>... </span><a href="#" class="more">Read More</a>'+
+            '<span style="display:none;">'+ t.slice(250,t.length)+' <a href="#" class="less">Less</a></span>'
+        );
+
+    });
+
+    $('a.more', minimized_elements).click(function(event){
+        event.preventDefault();
+        $(this).hide().prev().hide();
+        $(this).next().show();
+    });
+
+    $('a.less', minimized_elements).click(function(event){
+        event.preventDefault();
+        $(this).parent().hide().prev().show().prev().show();
+    });
+});
+</script>
+
 <% content_for :css do %>
   .cityProfile{
     background-image: url("<%=@city.photo%>");
@@ -8,19 +37,19 @@
   <%=  yield :css %>
 
 </style>
-<div class="cityProfile">
-
-    <div>
-      <h1 class="welcome">Welcome to <%= @city.name%>,</h1>
-      <!-- <%= image_tag (@city.photo), class: "cityProfilePic"%> -->
-      <p class="name"><%= @city.name%></br> lat: <%=@city.lat%></br> lon: <%=@city.lon%>
-
-    </div>
+<div class= "cityProfile">
+  <h1 class="welcome">Welcome to <%= @city.name%>,</h1>
+    <!-- <%= image_tag (@city.photo), class: "cityProfilePic"%> -->
+  <p class="name"><%= @city.name%></br> lat: <%=@city.lat%></br> lon: <%=@city.lon%></p>
 </div>
+
 <div class="posts">
-  <% @posts.each do |post|%>
+  <% @posts.each do |post| %>
   <div class="city">
-    <p class="postData"><%=post.title%></br><small><%=post.content%><%= post.created_at%></small></p>
+    <div class = "userAvatar"><img src="<%=post.user.photo %>", class="img-responsive" /></br>
+    <%= link_to post.user.first_name, user_path(post.user) %> <br></div>
+    <div class = "content"><h3><%= link_to post.title, city_post_path(@city, post)%></h3>
+    <p class = "postData"><small><%=post.content%></small></p><p><br> <%= "Published " + ((Time.now.to_i - post.created_at.to_i)/3600000).floor.to_s + " days ago" %> </p></div>
 
   </div>
   <%end%>
