@@ -14,6 +14,7 @@
   height: 500px;
   margin: auto;
   margin-bottom: 20px;
+  text-shadow: 4px 3px #3a3a3a;
 }
 .darken{
   background-color: rgba(0, 0, 0, 0.2);
@@ -34,5 +35,9 @@
   float: left;
   width: 50px;
   height: 50px;
-  margin: 45px;
+  margin: 45px 40px 20px 0;
+}
+.userAvatar {
+  float: left;
+
 }
