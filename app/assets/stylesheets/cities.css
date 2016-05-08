@@ -24,3 +24,7 @@
   position: relative;;
   margin-top: 0px;
 }
+
+#map {
+  height: 100%;
+}
