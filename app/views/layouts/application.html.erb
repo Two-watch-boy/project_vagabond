@@ -64,14 +64,12 @@
     <%= yield %>
   </div>
 
-  <% flash.each do |name, msg| %>
-  <% if name === "ad" %>
     <div class="alert alert-dismissible alert-info">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>Want to get away?</strong> <%= msg %>
+      <% ad_hash = advertisement %>
+      <strong>Want to get away?</strong> <%= current_user.interactions.count > 0 ? (link_to(ad_hash[:city], ad_hash[:link])) : (link_to "Expedia", "https://www.expedia.com/") %>
     </div>
-    <% end %>
-  <% end %>
+
 
 
   </body>

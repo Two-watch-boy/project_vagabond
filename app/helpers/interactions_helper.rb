@@ -24,9 +24,13 @@ module InteractionsHelper
         hash[interaction.city.name] += val
       end
     end
-    top_three = hash.sort_by {|city,total| -total}
-    city = top_three[rand(3)-1][0]
-    flash[:ad] = "Visit #{city} today!"
+    sorted = hash.sort_by {|city,total| -total}
+    if sorted.length >= 3
+      city = sorted[rand(3)-1][0]
+    else
+      city = sorted[0][0]
+    end
+    # flash[:ad] = "Visit #{city} today!"
     # top_three[0].to_s
     end
   end
