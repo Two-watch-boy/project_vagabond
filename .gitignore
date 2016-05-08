@@ -12,4 +12,7 @@
 !/log/.keep
 /tmp
 /log
-/config/secrets.yml
+/config/initializers/api.rb
+
+# Ignore application configuration
+/config/application.yml
