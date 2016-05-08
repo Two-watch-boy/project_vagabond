@@ -16,6 +16,6 @@ class CitiesController < ApplicationController
   end
 
   def create
-    
+
   end
 end

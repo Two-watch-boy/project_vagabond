@@ -3,8 +3,8 @@
   width: 60%;
   margin: auto;
 }
-.welcome{
-font-size: 45px;
+.welcomeProfile{
+  font-size: 45px;
 }
 .profilePic{
   display: inline;
@@ -28,6 +28,7 @@ small{
 .alert{
   width: 400px;
   margin: auto;
+  margin-top: 20px;
   text-align: center;
   margin-bottom: 10px;
 }

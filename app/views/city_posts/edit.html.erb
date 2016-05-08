@@ -1,17 +1,17 @@
-<h1>Edit post</h1>
-
 <div class="container">
-  <%= form_for @post, url: update_city_post_path(@city.name), @post) do |f| %>
+  <h1 class="postUpdateInputText">Edit post</h1>
+
+  <%= form_for @post, url: update_city_post_path(@city.name.gsub(/" "/, "%20"), @post) do |f| %>
   <div>
-    <%= f.text_field :title, {placeholder: "Title", class: "form-control"} %>
+    <%= f.text_field :title, {placeholder: "Title", class: "form-control postUpdateInput"} %>
   </div>
   <div>
-    <%= f.text_area :content, {placeholder: "Thoughts", class: "form-control"} %>
+    <%= f.text_area :content, {placeholder: "Thoughts", class: "form-control postUpdateInput content"} %>
   </div>
   <div>
-    <%= f.text_field :photo, {placeholder: "Image URL", class: "form-control"} %>
+    <%= f.text_field :photo, {placeholder: "Image URL", class: "form-control postUpdateInput"} %>
   </div>
-  <%= f.submit class: "btn btn-success btn-block"%>
+  <%= f.submit class: "btn btn-success postUpdateInputText"%>
   <% end %>
 
 </div>
