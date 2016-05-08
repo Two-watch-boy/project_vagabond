@@ -14,3 +14,5 @@
 /log
 /config/secrets.yml
 /config/application.yml
+/vagabond/tmp
+/vagabond/log

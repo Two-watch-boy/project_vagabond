@@ -23,6 +23,16 @@
   position: relative;;
   margin-top: 0px;
 }
+
+
+#map {
+  height: 100%;
+}
+#map-container {
+  height:400px;
+  width:100%
+}
+
 .img-responsive{
   float: left;
   width: 50px;
