@@ -1,5 +1,6 @@
 <div class="usersList">
   <% @users.each do |f|%>
+  <hr>
   <div class="user">
     <%= image_tag (f.photo), class: "profilePic"%>
     <p class="name"><%=link_to "#{f.first_name} #{f.last_name}", user_path(f)%></br><small><%= f.location%></small></p>

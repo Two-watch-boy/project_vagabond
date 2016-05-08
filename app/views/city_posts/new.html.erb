@@ -1,17 +1,18 @@
-<h1> Create a new post </h1>
+<div class="newPostPage">
 
-<div class="container">
-  <%= form_for @post, url: create_city_post_path(@city.name.gsub(/" "/, "%20")) do |f| %>
-  <div>
-    <%= f.text_field :title, {placeholder: "Title", class: "form-control"} %>
-  </div>
-  <div>
-    <%= f.text_area :content, {placeholder: "Thoughts", class: "form-control"} %>
-  </div>
-  <div>
-    <%= f.text_field :photo, {placeholder: "Image URL", class: "form-control"} %>
-  </div>
-  <%= f.submit class: "btn btn-success btn-block"%>
-  <% end %>
+  <h1 class="postInputText">Create a new Post</h1>
+
+    <%= form_for @post, url: create_city_post_path(@city.name.gsub(/" "/, "%20")) do |f| %>
+    <div>
+      <%= f.text_field :title, placeholder: "Title", class: "form-control postInput" %>
+    </div>
+    <div>
+      <%= f.text_area :content, placeholder: "Thoughts", class: "form-control postInput content" %>
+    </div>
+    <div>
+      <%= f.text_field :photo, placeholder: "Image URL", class: "form-control postInput" %>
+    </div>
+    <%= f.submit class: "btn btn-success postInputText"%>
+    <% end %>
 
 </div>

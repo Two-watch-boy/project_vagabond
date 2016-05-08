@@ -14,28 +14,74 @@
   height: 500px;
   margin: auto;
   margin-bottom: 20px;
-  text-shadow: 3px 2px #3a3a3a;
+  text-shadow: 5px 5px #3a3a3a;
+}
+.name{
+  margin-left: 10px;
+
 }
 .body2{
   /*padding-top: 21px;*/
 }
 .welcome{
   position: relative;;
-  margin-top: 0px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.welcomeCity{
+  font-size: 3em;
+  font-family: 'Marck Script', cursive;
+  margin-left: 50px;
 }
 .img-responsive{
   float: left;
   width: 50px;
-  height: 50px;
+  height: auto;
   margin: 45px 40px 20px 0;
 }
 
 .img-responsive2{
-display: block;
-max-width: 100%;
-height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 .userAvatar {
   float: left;
   margin-bottom: 15px;
+}
+.newPost{
+  float: right;
+  margin-bottom: 0px;
+  position: relative;
+  top: 51%;
+  right: 2%;
+  text-shadow: none;
+}
+.postInput{
+  display: block;
+  width: 40%;
+  margin: auto;
+  margin-bottom: 5px;
+}
+.postInput.content{
+  height: 100px;
+}
+.postInputText{
+  margin-left: 30%;
+}
+.dateCreated{
+  margin-left: 89px;
+}
+.postUpdateInput{
+  display: block;
+  width: 40%;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.postUpdateInputText{
+  margin-left: 30%;
+}
+.postUpdateInput.content{
+  height: 100px;
 }

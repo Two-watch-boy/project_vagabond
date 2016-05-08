@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Vagabond</title>
+  <link href='https://fonts.googleapis.com/css?family=Marck+Script' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -65,7 +66,7 @@
   </div>
 
 <% if current_user %>
-    <div class="alert alert-dismissible alert-info">
+    <div class="alert alert-dismissible alert-info advert">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
       <% ad_hash = advertisement %>
       <strong>Want to get away?</strong> <%= current_user.interactions.count > 0 ? (link_to(ad_hash[:city], ad_hash[:link])) : (link_to "Expedia", "https://www.expedia.com/") %>
