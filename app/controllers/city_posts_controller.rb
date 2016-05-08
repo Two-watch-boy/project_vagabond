@@ -11,6 +11,7 @@ class CityPostsController < ApplicationController
     @post.city_id = City.find_by(name: parse_city).id
     @post.save
     if current_user.posts.push(@post)
+      interact(3,@city)
       flash[:notice] = "#{@post.title} created"
       redirect_to city_post_path(@city.name.gsub(/" "/, "-"),@post)
     else
