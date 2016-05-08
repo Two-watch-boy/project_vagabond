@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Post.destroy_all
 User.destroy_all
+City.destroy_all
 
 random_cities = ["San Francisco","London","Gibraltar","Beijing"]
 

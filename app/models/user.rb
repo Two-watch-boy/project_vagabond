@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-
+  has_many :interactions
+  has_many :cities, through: :interactions
   has_many :posts
   has_secure_password
 

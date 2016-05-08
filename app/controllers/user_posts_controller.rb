@@ -3,6 +3,7 @@ class UserPostsController < ApplicationController
   def show
     # @user = User.find(params[:user_id])
     @post = Post.find_by(id: params[:post_id])
+    @interaction = interact(1,@post.city)
   end
 
   def destroy
