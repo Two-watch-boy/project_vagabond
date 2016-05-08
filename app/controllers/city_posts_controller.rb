@@ -1,4 +1,7 @@
 class CityPostsController < ApplicationController
+  before_filter :set_post, except: [:new, :create]
+  before_filter :set_user, except: [:new, :create]
+  before_filter :verifyUser, except: [:new, :create]
 
   def new
     @post = Post.new
@@ -11,8 +14,9 @@ class CityPostsController < ApplicationController
     @post.city_id = City.find_by(name: parse_city).id
     @post.save
     if current_user.posts.push(@post)
+      interact(3,@city)
       flash[:notice] = "#{@post.title} created"
-      redirect_to city_post_path(@city.name.gsub(/" "/, "%20"),@post)
+      redirect_to city_post_path(@city.name.gsub(/" "/, "-"),@post)
     else
       @post.destroy
       flash[:error] = "Something went wrong, please post again."
@@ -21,7 +25,7 @@ class CityPostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:post_id])
+    # @post = Post.find(params[:post_id])
     if @post.update(post_params)
       flash[:success] = "Your post was successfully changed."
       redirect_to user_path(@post.user)
@@ -32,17 +36,25 @@ class CityPostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:post_id])
+    # @post = Post.find(params[:post_id])
     @city = City.find_by(name: parse_city)
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
+    # @post = Post.find(params[:post_id])
     @post.destroy
     redirect_to root_path #change to city_show path eventually
   end
 
   private
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
+
+  def set_user
+    @user = @post.user
+  end
+
   def post_params
     params.require(:post).permit(:title,:content,:photo)
   end

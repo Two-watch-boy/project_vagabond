@@ -10,4 +10,4 @@ $(window).bind('scroll', function () {
         $('.cityProfile').css('margin-top', 30);
 
     }
-});
+  });
