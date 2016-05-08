@@ -16,14 +16,6 @@
   margin-bottom: 20px;
   text-shadow: 3px 2px #3a3a3a;
 }
-.darken{
-  background-color: rgba(0, 0, 0, 0.1);
-  position: absolute;
-  top: 5;
-  left: 5;
-  width: 90%;
-  height: 68.5%;
-}
 .body2{
   /*padding-top: 21px;*/
 }
