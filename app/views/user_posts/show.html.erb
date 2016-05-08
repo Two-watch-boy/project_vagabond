@@ -3,6 +3,8 @@
     <h1> <%=@post.title %> </h1>
     <p> <%=@post.content %> </p>
       <%= link_to "Delete", delete_user_posts_path(@post.user, @post), method: :delete %>
+      <br>
+      <%= link_to "Edit", update_post_path(@post.user, @post), method: :update %>
   </div>
 
 

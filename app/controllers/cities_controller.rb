@@ -9,4 +9,5 @@ class CitiesController < ApplicationController
     render :show
   end
 
+
 end
