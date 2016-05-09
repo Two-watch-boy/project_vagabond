@@ -9,18 +9,23 @@ class CityPostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    @city = City.find_by(name: parse_city)
-    @post.city_id = City.find_by(name: parse_city).id
-    @post.save
-    if current_user.posts.push(@post)
-      interact(3,@city)
-      flash[:notice] = "#{@post.title} created"
-      redirect_to city_post_path(@city.name.gsub(/" "/, "-"),@post)
+    if current_user
+      @post = Post.new(post_params)
+      @city = City.find_by(name: parse_city)
+      @post.city_id = City.find_by(name: parse_city).id
+      @post.save
+      if current_user.posts.push(@post)
+        interact(3,@city)
+        flash[:notice] = "#{@post.title} created"
+        redirect_to city_post_path(@city.name.gsub(/" "/, "-"),@post)
+      else
+        @post.destroy
+        flash[:error] = "Something went wrong, please post again."
+        redirect_to new_post_path(@city.name.gsub(/" "/, "%20"))
+      end
     else
-      @post.destroy
-      flash[:error] = "Something went wrong, please post again."
-      redirect_to new_post_path(@city.name.gsub(/" "/, "%20"))
+      flash[:error] = "You must be logged in to create a post"
+      redirect_to new_user_path
     end
   end
 

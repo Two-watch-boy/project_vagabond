@@ -5,8 +5,10 @@
     <h1> <%=@post.title %> </h1>
     <p> Published <%= time_ago_in_words (@post.created_at)%> ago</p>
     <p> <%=@post.content %> </p>
+    <% if current_user == @post.user%>
       <%= link_to "Edit", edit_city_post_path(@post.city.name, @post), method: :get, class: "link"   %>
       <%= link_to "Delete",  delete_city_post_path(@post.city, @post), method: :delete, data: {confirm: "Are you sure you want to delete this post?"}, class: "link"    %>
+    <% end %>
       <hr>
       <h3>Comments</h3>
       <div class = "commentsList">
@@ -14,10 +16,14 @@
         <div>
           <p> <img src="<%=comment.user.photo %>", class="tinyImg" /> <%= comment.content %><br><%= link_to comment.user.first_name, user_path(comment.user) %></p><br>
         </div>
-      <%= link_to "Edit Comment", edit_comment_path(@post, comment), method: :get, class: "link" %>
-      <%= link_to "Delete", delete_comment_path(@post.city, comment), method: :delete, class: "link" %>
+        <% if current_user == comment.user %>
+          <%= link_to "Edit Comment", edit_comment_path(@post, comment), method: :get, class: "link" %>
+          <%= link_to "Delete", delete_comment_path(@post.city, comment), method: :delete, class: "link" %>
+        <% end %>
       <% end %>
-      <%= link_to "Add Comment", new_comment_post_path(@post, @comment), method: :get, class: "link" %>
+      <% if current_user %>
+        <%= link_to "Add Comment", new_comment_post_path(@post, @comment), method: :get, class: "link" %>
+      <% end %>
     </div><hr>
   </div>
 

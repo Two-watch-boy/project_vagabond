@@ -10,7 +10,8 @@ function initMap() {
   console.log("In INit map");
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 20, lng: 0},
-    zoom: 2
+    zoom: 2,
+    scrollwheel: false
   });
 
   <% @city.each do |city| %>

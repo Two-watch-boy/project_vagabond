@@ -1,5 +1,9 @@
 module UsersHelper
   def is_premium?
-    current_user.premium === true
+    if current_user
+      current_user.premium === true
+    else
+      false
+    end
   end
 end
