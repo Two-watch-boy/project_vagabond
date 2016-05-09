@@ -17,3 +17,21 @@
  *= require_cities.css
  *= require_tree .
  */
+
+.alert.advertisement {
+  position: fixed;
+  margin-bottom: 0;
+  bottom: 0;
+  background-color: rgb(233, 250, 237);
+  color: #375A7F;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+.ad-close {
+  color: #375A7F;
+}
+
+.ad-close:hover {
+  color: blue;
+}
