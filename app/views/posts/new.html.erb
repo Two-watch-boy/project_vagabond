@@ -1,12 +1,12 @@
 <h1> Create a new post </h1>
 
-<div class="container">  
+<div class="container">
   <%= form_for @post do |f| %>
   <div>
-    <%= f.text_field :title, {placeholder: "Title", class: "form-control"} %>
+    <%= f.text_field :title, {placeholder: "Title", class: "form-control", minlength: 1, maxlength: 200} %>
   </div>
   <div>
-    <%= f.text_area :content, {placeholder: "Thoughts", class: "form-control"} %>
+    <%= f.text_area :content, {placeholder: "Thoughts", class: "form-control", minlength: 1} %>
   </div>
   <div>
     <%= f.text_field :photo, {placeholder: "Image URL", class: "form-control"} %>
