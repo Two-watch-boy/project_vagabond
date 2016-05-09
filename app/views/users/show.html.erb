@@ -18,7 +18,8 @@
     <hr>
     <%= link_to post.title, user_post_path(@user.first_name, post) %></br>
     <%= post.content%></br></br>
-    <%= post.created_at%>
+    <p> Published <%= time_ago_in_words (post.created_at)%> ago</p>
+
     </br>
 
   </div>

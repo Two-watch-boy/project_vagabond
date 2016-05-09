@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.photo == ""
-      @user.photo = "https://www.keypascoru.com/files/User_ring.png"
+      @user.photo = "https://lh3.googleusercontent.com/-NIp5BzqFqNE/AAAAAAAAAAI/AAAAAAAAAAA/CapeXh7GWeI/photo.jpg"
     end
     @user.save
     login(@user)

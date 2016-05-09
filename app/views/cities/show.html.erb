@@ -48,15 +48,15 @@ jQuery(function(){
 <div class="posts">
   <% @posts.each do |post| %>
   </br><hr>
-  <div class="city">
+  <div class="userPost">
     <div class = "userAvatar"><img src="<%=post.user.photo %>", class="img-responsive" /></br>
     <%= link_to post.user.first_name, user_path(post.user) %> <br></div>
     <div class = "content">
       <h3><%= link_to post.title, city_post_path(@city, post)%></h3>
       <p class = "postData"><small><%=post.content%></small></p>
-      <p class="dateCreated"> <%= "Published " + ((Time.now.to_i - post.created_at.to_i)/3600000).floor.to_s + " days ago" %> </p>
+      <p> Published <%= time_ago_in_words (post.created_at)%> ago</p>
     </div>
-
   </div>
+  </br>
   <%end%>
 </div>

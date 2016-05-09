@@ -4,19 +4,34 @@
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <%= image_tag "sf", :class => "coverPhoto"%>
+
+<div class="item active">
+      <%= image_tag "beach", :class => "coverPhoto"%>
       <div class="carousel-caption">
-        <h3>San Fancisco</h3>
-        <p></p>
+        <h1 class="splashWelcome">Welcome To HandPrint</h1>
+        <p class="splashWelcome"> Your Friendly Travel Blog</p>
       </div>
     </div>
 
-    <div class="item">
+    <% @city.each do |t|%>
+      <div class="item">
+        <%= image_tag (t.photo), :class => "coverPhoto"%>
+        <div class="carousel-caption">
+          <h3><%=link_to "#{t.name}", city_path(t)%></h3>
+          <p></p>
+        </div>
+
+      </div>
+    <%end%>
+
+
+    <!-- <div class="item">
       <%= image_tag "london", :class => "coverPhoto"%>
       <div class="carousel-caption">
         <h3>London</h3>
@@ -31,7 +46,7 @@
         <p></p>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
