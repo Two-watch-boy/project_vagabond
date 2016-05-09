@@ -56,7 +56,7 @@ class CitiesController < ApplicationController
     :query => {:term => city,
       :image_size => 1600,
       :only => "City_and_Arcitecture,Landscapes",
-      :consumer_key => "y9c9CO3ZyoNLobxpxZxGxn40e08RF5dwkf8Vmh5M"})
+      :consumer_key => ENV['secret_500_key']})
     image = JSON.parse(res.body)["photos"][0]["image_url"]
   end
 end
