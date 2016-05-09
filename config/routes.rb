@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   post "/posts/:post_id/comment/", to: "comments#create", as: "create_comment"
   patch "/posts/:post_id/comment/:comment_id", to: "comments#update", as: "update_comment"
   get "/posts/:post_id/comment/:comment_id/edit", to: "comments#edit", as: "edit_comment"
-  delete "/posts/:comment_id/comment/:comment_id", to: "comments#destroy", as: "delete_comment"
+  delete "/posts/:post_id/comment/:comment_id", to: "comments#destroy", as: "delete_comment"
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

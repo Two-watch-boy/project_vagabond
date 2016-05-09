@@ -45,8 +45,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = Comment.find(params[:comment_id])
+    @post = Post.find(params[:post_id])
     @comment.destroy
-    redirect_to user_post_path
+    redirect_to city_post_path(@post.city.name.gsub(/" "/, "-"),@post)
   end
 
     private
