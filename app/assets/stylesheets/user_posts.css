@@ -1,3 +1,11 @@
+
 .link{
   margin: 10px;
+}
+.commentsList{
+  margin: 10px 30px 0 30px;
+}
+.tinyImg{
+  height: 30px;
+  margin: 30px 10px 10px 0;
 }
