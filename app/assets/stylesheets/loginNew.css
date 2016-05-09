@@ -25,3 +25,15 @@
 .updateUserText{
   margin-left: 30%;
 }
+.samplePic {
+  width: 125px;
+  height: auto;
+  margin-left: 70%;
+  margin-top: -35%;
+  position: absolute;
+}
+.samplePicText{
+  margin-left: 74%;
+  margin-top: -19%;
+  position: absolute;
+}
