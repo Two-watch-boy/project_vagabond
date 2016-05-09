@@ -28,6 +28,26 @@ class CommentsController < ApplicationController
     end
   end
 
+  def update
+    @comment = Comment.find(params[:comment_id])
+    if @comment.update(comment_params)
+      flash[:success] = "Your comment was successfully changed."
+      redirect_to user_post_path(@post.comment)
+    else
+      flash[:error] = "Error!"
+      redirect_to edit_comment_post_path(@post)
+    end
+  end
+
+  def edit
+    @comment = Comment.find_by(params[:id])
+  end
+
+  def destroy
+    @comment.destroy
+    redirect_to user_post_path
+  end
+
     private
 
     def comment_params
@@ -35,25 +55,3 @@ class CommentsController < ApplicationController
     end
 
 end
-
-  # def update
-  #   # @post = Post.find(params[:post_id])
-  #   if @post.update(post_params)
-  #     flash[:success] = "Your post was successfully changed."
-  #     redirect_to user_path(@post.user)
-  #   else
-  #     flash[:error] = "There was an error in your changes."
-  #     redirect_to edit_user_post(@post)
-  #   end
-  # end
-  #
-  # def edit
-  #   # @post = Post.find(params[:post_id])
-  #   @city = City.find_by(name: parse_city)
-  # end
-  #
-  # def destroy
-  #   # @post = Post.find(params[:post_id])
-  #   @post.destroy
-  #   redirect_to root_path #change to city_show path eventually
-  # end

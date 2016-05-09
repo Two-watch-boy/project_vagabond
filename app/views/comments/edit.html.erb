@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 class="commentUpdateInputText">Edit Comments</h1>
+
+  <%= form_for @post, url: update_comment_post_path(@post.comment, @comment) do |f| %>
+
+  <div>
+    <%= f.text_area :content, {placeholder: "Comments", class: "form-control commentInputUpdate"} %>
+  </div>
+
+  <%= f.submit class: "btn btn-success commentInputUpdateButton"%>
+  <% end %>
+
+</div>

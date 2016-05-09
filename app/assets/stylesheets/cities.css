@@ -95,3 +95,30 @@
 .postUpdateInput.content{
   height: 100px;
 }
+.commentInput{
+  display: block;
+  width: 40%;
+  margin: auto;
+  margin-bottom: 5px;
+}
+.commentInput.content{
+  height: 100px;
+}
+.commentInputButton{
+  margin-left: 30%;
+}
+.commentInputText{
+  margin-left: 31%;
+}
+.commentInputUpdate{
+  display: block;
+  width: 40%;
+  margin: auto;
+  margin-bottom: 5px;
+}
+.commentUpdateInputText{
+  margin-left: 30%;
+}
+.commentInputUpdateButton{
+  margin-left: 30%;
+}
