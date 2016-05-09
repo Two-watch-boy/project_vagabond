@@ -36,3 +36,13 @@
 .samplePicText{
   margin-left: 34px;
 }
+.makeComment.input{
+  display: block;
+  width: 40%;
+  height: 100px;
+  margin: auto;
+  margin-bottom: 5px;
+}
+.makeCommentText{
+  margin-left: 30%;
+}

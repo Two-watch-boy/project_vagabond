@@ -1,13 +1,13 @@
-<h1 class="commentInputText"> Post a comment </h1>
-
 <div class="container">
+  <h1 class="makeCommentText"> Post a comment </h1>
+
   <%= form_for @comment, url: create_comment_path(@post) do |f| %>
 
   <div>
-    <%= f.text_area :content, {placeholder: "Comments", class: "form-control commentInput"} %>
+    <%= f.text_area :content, {placeholder: "Comments", class: "form-control makeComment input"} %>
   </div>
 
-  <%= f.submit class: "btn btn-success commentInputButton"%>
+  <%= f.submit class: "btn btn-success makeCommentText"%>
   <% end %>
 
 </div>

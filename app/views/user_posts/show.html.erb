@@ -12,7 +12,7 @@
       <div class = "commentsList">
       <% @post.comments.each do |comment| %>
         <div>
-          <p> <img src="<%=@post.user.photo %>", class="tinyImg" /> <%= comment.content %><br><%= link_to @post.user.first_name, user_path(@post.user) %></p><br>
+          <p> <img src="<%=comment.user.photo %>", class="tinyImg" /> <%= comment.content %><br><%= link_to comment.user.first_name, user_path(comment.user) %></p><br>
         </div>
       <%= link_to "Edit Comment", edit_comment_path(@post, comment), method: :get, class: "link" %>
       <%= link_to "Delete", delete_comment_path(@post.city, comment), method: :delete, class: "link" %>
