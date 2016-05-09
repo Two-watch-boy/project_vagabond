@@ -31,7 +31,7 @@ class CitiesController < ApplicationController
         flash[:notice] = "New city #{@city.name} created"
         redirect_to city_path(@city)
       else
-        flash[:error] = "Error in creaating new city."
+        flash[:error] = "Error in creating new city."
         redirect_to new_city_path
       end
     else
