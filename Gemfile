@@ -40,6 +40,11 @@ group :development, :test do
   gem 'ffaker'
 
   gem "figaro"
+
+  gem "httparty"
+
+  gem "certified"
+
 end
 
 group :development do
