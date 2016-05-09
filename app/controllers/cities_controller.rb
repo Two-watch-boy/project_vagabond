@@ -43,7 +43,7 @@ class CitiesController < ApplicationController
   private
 
   def get_city_info city
-    url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{city}&key=#{ENV['secret_google_code']}"
+    url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{city}&key=#{ENV['SECRET_GOOGLE_KEY']}"
     res = HTTParty.get(url)
     city = {
       :name => JSON.parse(res.body)["results"][0]["address_components"][0]["long_name"],
@@ -56,7 +56,7 @@ class CitiesController < ApplicationController
     :query => {:term => city,
       :image_size => 1600,
       :only => "City_and_Arcitecture,Landscapes",
-      :consumer_key => ENV['secret_500_key']})
+      :consumer_key => ENV['SECRET_500_KEY']})
     image = JSON.parse(res.body)["photos"][0]["image_url"]
   end
 end

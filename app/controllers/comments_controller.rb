@@ -19,6 +19,7 @@ class CommentsController < ApplicationController
     puts("POST ID: " + @post.id.to_s)
     @comment.save
     if @post.comments.push(@comment)
+      interact(2,@post.city)
       current_user.comments.push(@comment)
       flash[:notice] = "New comment created."
       redirect_to city_post_path(@post.city.name.gsub(/" "/, "-"),@post)
