@@ -24,6 +24,10 @@ Rails.application.routes.draw do
   patch "cities/:city_name/posts/:post_id", to: "city_posts#update", as: "update_city_post"
   get "cities/:city_name/posts/:post_id/edit", to: "city_posts#edit", as: "edit_city_post"
   delete "/cities/:city_id/posts/:post_id", to: "city_posts#destroy", as: "delete_city_post"
+
+  get "/posts/:post_id/comment/new", to: "comments#new", as: "new_comment_post"
+  post "/posts/:post_id/comment/", to: "comments#create", as: "create_comment"
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

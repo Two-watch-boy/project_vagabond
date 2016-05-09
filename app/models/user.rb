@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :interactions
   has_many :cities, through: :interactions
   has_many :posts
+  has_many :comments
   has_secure_password
 
   def self.confirm(params)
