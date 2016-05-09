@@ -30,17 +30,18 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:comment_id])
+    @post = Post.find(params[:post_id])
     if @comment.update(comment_params)
       flash[:success] = "Your comment was successfully changed."
-      redirect_to user_post_path(@post.comment)
+      redirect_to city_post_path(@post.city.name.gsub(/" "/, "-"),@post)
     else
       flash[:error] = "Error!"
-      redirect_to edit_comment_post_path(@post)
+      redirect_to edit_comment_path(@post)
     end
   end
 
   def edit
-    @comment = Comment.find_by(params[:id])
+    @comment = Comment.find(params[:comment_id])
   end
 
   def destroy
