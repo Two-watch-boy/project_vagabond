@@ -30,6 +30,7 @@ function initMap() {
 <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['secret_google_key']%>&callback=initMap"
 async defer></script></div>
 
+<%= link_to "Add a City", new_city_path %>
 
 <div class="citiesList">
   <% @city.each do |t|%>

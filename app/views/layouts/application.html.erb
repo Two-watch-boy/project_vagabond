@@ -65,11 +65,11 @@
     <%= yield %>
   </div>
 
-<% if current_user %>
+<% if current_user && !is_premium? %>
     <div class="alert alert-dismissible alert-info advert">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
       <% ad_hash = advertisement %>
-      <strong>Want to get away?</strong> <%= current_user.interactions.count > 0 ? (link_to(ad_hash[:city], ad_hash[:link])) : (link_to "Expedia", "https://www.expedia.com/") %>
+      <strong>Want to get away?</strong> <%= current_user.interactions.count > 0 ? (link_to("#{ad_hash[:city]} is just a click away!", ad_hash[:link])) : (link_to "Expedia", "https://www.expedia.com/") %>
     </div>
 <% end %>
 

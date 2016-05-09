@@ -21,7 +21,9 @@
   <div>
     <%= f.text_field :photo, placeholder: "Picture URL" , class: "newUser form-control"%>
   </div>
-
+  <div>
+    <%= f.check_box :premium, class: "newUser form-control"%>
+  </div>
   <%= f.submit "Sign Up", class: "newUserText btn btn-primary"%>
   <% end %>
 </div>

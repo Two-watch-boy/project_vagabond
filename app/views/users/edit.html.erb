@@ -15,7 +15,9 @@
     <div>
       <%= f.text_field :photo, placeholder: "Picture URL" , class: "updateUser form-control"%>
     </div>
-
+    <div>
+      <%= f.check_box :premium, class: "updateUser form-control"%>
+    </div>
     <%= f.submit "Save Changes", class: "updateUserText btn btn-primary"%>
     <% end %>
   <%else%>

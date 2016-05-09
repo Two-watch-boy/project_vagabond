@@ -12,21 +12,31 @@ class CitiesController < ApplicationController
   end
 
   def new
+    if !is_premium?
+      flash[:error] = "You need to switch to premium to do this."
+      redirect_to edit_path(current_user)
+    end
     @city = City.new
   end
 
   def create
-    queried_city = params[:city][:name]
-    city_info = get_city_info queried_city
-    city_info[:photo] = get_photo city_info[:name]
-    puts(city_info)
-    @city = City.new(city_info)
-    if @city.save
-      flash[:notice] = "New city #{@city.name} created"
-      redirect_to city_path(@city)
+    if is_premium?
+      queried_city = params[:city][:name]
+      city_info = get_city_info queried_city
+      city_info[:photo] = get_photo city_info[:name]
+      puts(city_info)
+      @city = City.new(city_info)
+      if @city.save
+        interact(3,@city)
+        flash[:notice] = "New city #{@city.name} created"
+        redirect_to city_path(@city)
+      else
+        flash[:error] = "Error in creaating new city."
+        redirect_to new_city_path
+      end
     else
-      flash[:error] = "Error in creaating new city."
-      redirect_to new_city_path
+      flash[:error] = "You need to switch to premium to do this."
+      redirect_to edit_path(current_user)
     end
   end
 
@@ -45,7 +55,7 @@ class CitiesController < ApplicationController
     res = HTTParty.get("https://api.500px.com/v1/photos/search",
     :query => {:term => city,
       :image_size => 1600,
-      :only => "Landscapes",
+      :only => "City_and_Arcitecture,Landscapes",
       :consumer_key => "y9c9CO3ZyoNLobxpxZxGxn40e08RF5dwkf8Vmh5M"})
     image = JSON.parse(res.body)["photos"][0]["image_url"]
   end
