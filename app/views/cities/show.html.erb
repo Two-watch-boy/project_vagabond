@@ -41,15 +41,16 @@ jQuery(function(){
   <h1 class="welcome">Welcome to</br> <strong class="welcomeCity"><%= @city.name%>,</strong></h1>
     <!-- <%= image_tag (@city.photo), class: "cityProfilePic"%> -->
   <!-- <p class="name"><%= @city.name%></br> lat: <%=@city.lat%></br> lon: <%=@city.lon%></p> -->
-  <%=link_to "Create New Post", new_post_path(@city.name), class: "btn btn-success newPost"%>
-
+  <% if current_user %>
+    <%=link_to "Create New Post", new_post_path(@city.name), class: "btn btn-success newPost"%>
+  <% end %>
 </div>
 
 <div class="posts">
   <% @posts.each do |post| %>
   </br><hr>
   <div class="userPost">
-    <div class = "userAvatar"><img src="<%=post.user.photo %>", class="img-responsive" /></br>
+    <div class = "userAvatar"><img src="<%=post.user.photo%>", class="img-responsive" /></br>
     <%= link_to post.user.first_name, user_path(post.user) %> <br></div>
     <div class = "content">
       <h3><%= link_to post.title, city_post_path(@city, post)%></h3>
