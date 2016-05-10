@@ -15,7 +15,7 @@
 }
 .yield{
   display: block;
-  width: 100%;
+  width: 90%;
   margin: auto;
 }
 #myCarousel{
@@ -27,7 +27,7 @@
       height: 450px;
       margin: auto;
   }
-.advert{
-  position: relative;;
+/*.advert{
+  position: relative;
   bottom: 90%;
-}
+}*/
