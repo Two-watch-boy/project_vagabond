@@ -1,4 +1,3 @@
-
 <%= ENV["secret_test"] %>
 
 <div id="map-container">
@@ -32,17 +31,15 @@ async defer></script></div>
 
 
 <% if is_premium? %>
-<%= link_to "Add a City", new_city_path %>
 <% end %>
 
 <hr>
 
 <div class="citiesList">
-  <% @city.each do |t|%>
-  <hr>
-  <div class="city">
-    <%= image_tag (t.photo), class: "cityPic"%>
-    <p class="cityName"><%=link_to "#{t.name}", city_path(t)%></p>
+ <% @city.each do |t|%>
+<div class="col-md-9 col-lg-6">
+  <%= image_tag (t.photo), class: "cityPic"%>
+  <p class="cityName"><%=link_to "#{t.name}", city_path(t)%></p>
 
   </div>
   <%end%>

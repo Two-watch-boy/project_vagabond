@@ -1,5 +1,8 @@
-.city{
-  margin: 0 34%;
+.col-lg-6{
+margin-bottom: 10px;
+padding-right: -100px;
+padding-left: 150px;
+width: 40%;
 }
 .cityPic{
   width: 400px;
@@ -132,4 +135,7 @@
 }
 .commentInputUpdateButton{
   margin-left: 30%;
+}
+.addCity{
+  text-decoration: underline;
 }
