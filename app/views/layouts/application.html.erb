@@ -67,7 +67,7 @@
     <div class=" advertisement alert alert-dismissible alert-info advert">
       <button type="button" class="ad-close close" data-dismiss="alert">&times;</button>
       <% ad_hash = advertisement %>
-      <strong>Want to get away?</strong> <%= ((current_user == nil) || (current_user.interactions.count = 0)) ? (link_to "Expedia", "https://www.expedia.com/", target: :_blank ) : (link_to("#{ad_hash[:city]} is just a click away!", ad_hash[:link], target: :_blank )) %>
+      <strong>Want to get away?</strong> <%= ((current_user == nil) || (current_user.interactions.count > 0)) ? (link_to "Expedia", "https://www.expedia.com/", target: :_blank ) : (link_to("#{ad_hash[:city]} is just a click away!", ad_hash[:link], target: :_blank )) %>
     </div>
 <% end %>
 
