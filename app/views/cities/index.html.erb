@@ -9,8 +9,7 @@ function initMap() {
   console.log("In INit map");
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 20, lng: 0},
-    zoom: 2,
-    scrollwheel: false
+    zoom: 2
   });
 
   <% @city.each do |city| %>
@@ -27,7 +26,7 @@ function initMap() {
   <% end %>
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['SECRET_GOOGLE_KEY']%>&callback=initMap"
+<script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['secret_google_key']%>&callback=initMap"
 async defer></script></div>
 
 
