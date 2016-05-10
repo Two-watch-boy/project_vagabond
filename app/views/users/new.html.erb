@@ -34,8 +34,11 @@
   <div>
     <%= f.text_field :photo, placeholder: "Picture URL" ,class: "newUser form-control userPicture"%>
   </div>
-  <div>
-    <%= f.check_box :premium, class: "newUser form-control"%>
+  <div class="newUser row">
+    <%= f.check_box :premium, class: ""%>
+    <label>
+      Subscribe to Premium?
+    </label>
   </div>
   <%= f.submit "Sign Up", class: "newUserText btn btn-primary"%>
   <div class="renderProfilePicture">

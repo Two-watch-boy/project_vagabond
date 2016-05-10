@@ -28,7 +28,9 @@
       <ul class="nav navbar-nav">
         <li><%= link_to "Users", users_path%></li>
         <li><%= link_to "Cities", cities_path%></li>
+        <% if is_premium? %>
         <li><%= link_to "Add a City", new_city_path, class: "btn btn-success btn cityButton" %></li>
+        <% end %>
       </ul>
       <% else %>
       <ul class="nav navbar-nav">

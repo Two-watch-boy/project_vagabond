@@ -12,18 +12,26 @@
   width: 40%;
   margin: auto;
   margin-bottom: 5px;
+  margin-left: 30%;
 }
 .newUserText{
   margin-left: 30%;
+}
+.newUser label{
+  margin-left: 5px;
 }
 .updateUser{
   display: block;
   width: 40%;
   margin: auto;
   margin-bottom: 5px;
+  margin-left: 30%;
 }
 .updateUserText{
   margin-left: 30%;
+}
+.updateUser label {
+  margin-left: 5px;
 }
 .renderProfilePicture{
   margin-left: 75%;

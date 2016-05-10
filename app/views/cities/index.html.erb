@@ -30,16 +30,15 @@ function initMap() {
 async defer></script></div>
 
 
-<% if is_premium? %>
-<% end %>
 
 <hr>
 
 <div class="citiesList">
  <% @city.each do |t|%>
 <div class="col-md-9 col-lg-6">
-  <%= image_tag (t.photo), class: "cityPic"%>
+  <%= link_to city_path(t) do %>
+  <%= image_tag (t.photo), class: "cityPic" %>
   <p class="cityName"><%=link_to "#{t.name}", city_path(t)%></p>
-
+  <% end %>
   </div>
   <%end%>
