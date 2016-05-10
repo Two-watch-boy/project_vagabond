@@ -1,7 +1,7 @@
 # Handprint
 A travel app for sharing experiences and thoughts about cities around the world.
 
-![Alt text](/app/citiesScreenshot.png "Cities Screenshot")
+![Alt text](project_vagabond/citiesScreenshot.png "Cities Screenshot")
 
 #Link to project hosted on Heroku
 https://lit-badlands-28215.herokuapp.com/
@@ -32,4 +32,4 @@ gets created by a user
 * User email verification
 * Search function for cities
 
-![Alt text](/app/editScreenshot.png "Edit Screenshot")
+![Alt text](project_vagabond/editScreenshot.png "Edit Screenshot")
